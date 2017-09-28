@@ -573,6 +573,30 @@ class test_data_generator {
 
         $this->roles = $DB->get_records('role', [], '', 'shortname, id');
         $this->adminuser = \core_user::get_user_by_username('admin');
+
+        $users = $DB->get_recordset('user');
+        foreach ($users as $user) {
+            if (!empty($user->idnumber)) {
+                $this->users[$user->username] = $user;
+            }
+        }
+        $users->close();
+
+        $courses = $DB->get_recordset('course');
+        foreach ($courses as $course) {
+            if (!empty($course->idnumber)) {
+                $this->courses[$course->idnumber] = $course;
+            }
+        }
+        $courses->close();
+
+        $categories = $DB->get_recordset('course_categories');
+        foreach ($categories as $coursecat) {
+            if (!empty($coursecat->idnumber)) {
+                $this->categories[$coursecat->idnumber] = $coursecat;
+            }
+        }
+        $categories->close();
     }
 
     public function create_users($users) {
@@ -595,12 +619,29 @@ class test_data_generator {
             $record->parent = $parent->id;
         }
 
-        $generator = new testing_data_generator();
-        $thiscategory = $generator->create_category($record);
-        if ($parent) {
-            error_log("==> Created category '{$thiscategory->name}' in '{$parent->name}'");
+        if (!empty($this->categories[$record->idnumber])) {
+            $thiscategory = $this->categories[$record->idnumber];
+            error_log("==> Found existing category");
+            $changed = false;
+            foreach ((array) $record as $key => $value) {
+                if (isset($thiscategory->$key) && $thiscategory->$key != $value) {
+                    $thiscategory->$key = $value;
+                    $changed = true;
+                }
+            }
+            if ($changed) {
+                $DB->update_record('course_categories', $thiscategory);
+            }
+
+            // TODO Update the parentage.
         } else {
-            error_log("==> Created category '{$thiscategory->name}' in root");
+            $generator = new testing_data_generator();
+            $thiscategory = $generator->create_category($record);
+            if ($parent) {
+                error_log("==> Created category '{$thiscategory->name}' in '{$parent->name}'");
+            } else {
+                error_log("==> Created category '{$thiscategory->name}' in root");
+            }
         }
 
         $this->categories[$thiscategory->idnumber] = $thiscategory;
@@ -638,14 +679,33 @@ class test_data_generator {
     }
 
     protected function create_course($course, $category) {
+        global $DB;
         $record = (object) $course;
 
         $record->category = $category->id;
 
-        $generator = new testing_data_generator();
-        $thiscourse = $generator->create_course($record);
-        $this->courses[$thiscourse->idnumber] = $thiscourse;
-        error_log("==> Created course '{$thiscourse->shortname}' in '{$category->name}'");
+        if (!empty($this->courses[$record->idnumber])) {
+            $thiscourse = $this->courses[$record->idnumber];
+            error_log("==> Found existing course {$record->shortname}");
+            $changed = false;
+            foreach ((array) $record as $key => $value) {
+                if (isset($thiscourse->$key) && $thiscourse->$key != $value) {
+                    $thiscourse->$key = $value;
+                    $changed = true;
+                    error_log("{$key} > {$thiscourse->$key} => {$value}");
+                }
+            }
+            if ($changed) {
+                $DB->update_record('course', $thiscourse);
+            }
+
+            // TODO Update the parentage.
+        } else {
+            $generator = new testing_data_generator();
+            $thiscourse = $generator->create_course($record);
+            $this->courses[$thiscourse->idnumber] = $thiscourse;
+            error_log("==> Created course '{$thiscourse->shortname}' in '{$category->name}'");
+        }
 
         // Finally enrol any users who should be there.
         if (isset($course['enrolments'])) {
@@ -668,7 +728,7 @@ class test_data_generator {
     }
 
     protected function create_user($user) {
-        global $DOMAIN;
+        global $DOMAIN, $DB;
 
         $record = (object) $user;
         $username = strtolower($record->firstname);
@@ -677,11 +737,36 @@ class test_data_generator {
         $record->email = "{$username}@{$DOMAIN}";;
         $record->password = 'x';
 
-        $generator = new testing_data_generator();
-        $thisuser = $generator->create_user($record);
-        $this->users[$username] = $thisuser;
+        if (isset($this->users[$record->username])) {
+            $thisuser = $this->users[$record->idnumber];
+            error_log("==> Found existing user {$record->username}");
+            $changed = false;
+            foreach ((array) $record as $key => $value) {
+                if ($key === 'password') {
+                    if (validate_internal_user_password($thisuser, $value)) {
+                        continue;
+                    }
+                    $value = hash_internal_user_password($value);
+                }
 
-        $thisuser = $this->users[$username];
+                if (isset($thisuser->$key) && $thisuser->$key != $value) {
+                    error_log("{$key} > {$thisuser->$key} => {$value}");
+                    $thisuser->$key = $value;
+                    $changed = true;
+                }
+            }
+            if ($changed) {
+                error_log("Updating user {$thisuser->username}");
+                $DB->update_record('user', $thisuser);
+            }
+        } else {
+            $generator = new testing_data_generator();
+
+            $thisuser = $generator->create_user($record);
+            $this->users[$username] = $thisuser;
+
+            $thisuser = $this->users[$username];
+        }
 
         // Now add any events directly in this category.
         if (isset($user['events'])) {
