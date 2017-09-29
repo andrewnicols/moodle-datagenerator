@@ -137,6 +137,41 @@ $categories = [
                 'timestartmodifier' => 'P1WT8H',
                 'timeduration' => HOURSECS * 8,
             ],
+            [
+                'name' => 'Student Safety Talks',
+                'uuid' => sha1('safety1'),
+                'timestartmodifier' => 'P1DT13H',
+                'timeduration' => 15 * MINSECS,
+            ],
+            [
+                'name' => 'Student Safety Talks',
+                'uuid' => sha1('safety2'),
+                'timestartmodifier' => 'P2DT13H',
+                'timeduration' => 15 * MINSECS,
+            ],
+            [
+                'name' => 'Student Safety Talks',
+                'uuid' => sha1('safety3'),
+                'timestartmodifier' => 'P3DT13H',
+                'timeduration' => 15 * MINSECS,
+            ],
+            [
+                'name' => 'Student Safety Talks',
+                'uuid' => sha1('safety4'),
+                'timestartmodifier' => 'P4DT13H',
+                'timeduration' => 15 * MINSECS,
+            ],
+            [
+                'name' => 'Student Safety Talks',
+                'uuid' => sha1('safety5'),
+                'timestartmodifier' => 'P5DT13H',
+                'timeduration' => 15 * MINSECS,
+            ],
+            [
+                'name' => 'Careers Fair',
+                'timestartmodifier' => 'P10WT8H',
+                'timeduration' => HOURSECS * 8,
+            ],
         ],
         'children' => [
         ],
@@ -159,20 +194,26 @@ $categories = [
                 ],
                 'events' => [
                     [
-                        'name' => 'Film Showing',
+                        'name' => 'Monday Showing',
                         'timestartmodifier' => 'P1DT21H',
                         'timeduration' => HOURSECS * 2.5,
                         'repeats' => 10,
                     ],
                     [
-                        'name' => 'Film Showing',
+                        'name' => 'Wednesday Showing',
                         'timestartmodifier' => 'P3DT21H',
                         'timeduration' => HOURSECS * 2.5,
                         'repeats' => 10,
                     ],
                     [
-                        'name' => 'Film Showing',
+                        'name' => 'Friday Film',
                         'timestartmodifier' => 'P5DT21H',
+                        'timeduration' => HOURSECS * 2.5,
+                        'repeats' => 10,
+                    ],
+                    [
+                        'name' => 'Saturday Matinee Film',
+                        'timestartmodifier' => 'P6DT12H',
                         'timeduration' => HOURSECS * 2.5,
                         'repeats' => 10,
                     ],
@@ -249,6 +290,12 @@ $categories = [
                         'timeduration' => HOURSECS * 6,
                     ],
                     [
+                        'name' => 'Social',
+                        'timestartmodifier' => 'P4DT19H',
+                        'timeduration' => HOURSECS * 6,
+                        'repeats' => 10,
+                    ],
+                    [
                         'name' => 'Hellvellyn',
                         'timestartmodifier' => 'P1W4DT9H',
                         'timeduration' => HOURSECS * 6,
@@ -283,7 +330,7 @@ $categories = [
                      [
                          'name' => 'Faculty Induction',
                          'description' => '<p>A chance to meet the faculty staff</p>',
-                         'timemodifier' => 'P1DT17H30M',
+                         'timestartmodifier' => 'P1DT17H30M',
                      ],
                 ],
                 'children' => [
@@ -298,33 +345,39 @@ $categories = [
                         'events' => [
                             [
                                 'name' => 'Lab Safety Awareness course',
+                                'uuid' => sha1('Lab 1'),
                                 'description' => '<p>Every student must attent a lab safety awareneess course this week.</p><p>Attendance is compulsory and will be monitored.</p><p>You will not be allowed to use lab equipment without attending this course.</p>',
-                                'timemodifier' => 'PT9H',
+                                'timestartmodifier' => 'PT9H',
                             ],
                             [
                                 'name' => 'Lab Safety Awareness course',
+                                'uuid' => sha1('Lab 2'),
                                 'description' => '<p>Every student must attent a lab safety awareneess course this week.</p><p>Attendance is compulsory and will be monitored.</p><p>You will not be allowed to use lab equipment without attending this course.</p>',
-                                'timemodifier' => 'PT14H',
+                                'timestartmodifier' => 'PT14H',
                             ],
                             [
                                 'name' => 'Lab Safety Awareness course',
+                                'uuid' => sha1('Lab 3'),
                                 'description' => '<p>Every student must attent a lab safety awareneess course this week.</p><p>Attendance is compulsory and will be monitored.</p><p>You will not be allowed to use lab equipment without attending this course.</p>',
-                                'timemodifier' => 'P1DT9H',
+                                'timestartmodifier' => 'P1DT9H',
                             ],
                             [
                                 'name' => 'Lab Safety Awareness course',
+                                'uuid' => sha1('Lab 4'),
                                 'description' => '<p>Every student must attent a lab safety awareneess course this week.</p><p>Attendance is compulsory and will be monitored.</p><p>You will not be allowed to use lab equipment without attending this course.</p>',
-                                'timemodifier' => 'P1DT14H',
+                                'timestartmodifier' => 'P1DT14H',
                             ],
                             [
                                 'name' => 'Lab Safety Awareness course',
+                                'uuid' => sha1('Lab 5'),
                                 'description' => '<p>Every student must attent a lab safety awareneess course this week.</p><p>Attendance is compulsory and will be monitored.</p><p>You will not be allowed to use lab equipment without attending this course.</p>',
-                                'timemodifier' => 'P3DT9H',
+                                'timestartmodifier' => 'P3DT9H',
                             ],
                             [
                                 'name' => 'Lab Safety Awareness course',
+                                'uuid' => sha1('Lab 6'),
                                 'description' => '<p>Every student must attent a lab safety awareneess course this week.</p><p>Attendance is compulsory and will be monitored.</p><p>You will not be allowed to use lab equipment without attending this course.</p>',
-                                'timemodifier' => 'P3DT14H',
+                                'timestartmodifier' => 'P3DT14H',
                             ],
                         ],
                         'children' => [
@@ -558,7 +611,7 @@ $generator = new test_data_generator();
 $generator->create_users($users);
 $generator->setup_courses($categories);
 
-//$transaction->allow_commit();
+$transaction->allow_commit();
 
 class test_data_generator {
 
@@ -803,6 +856,8 @@ class test_data_generator {
     }
 
     protected function create_event($event) {
+        global $DB;
+
         $properties = [
             'name' => 'Event',
             'description' => '',
@@ -810,10 +865,11 @@ class test_data_generator {
             'eventtype' => 'site',
             'repeat' => 0,
             'repeats' => 0,
-            'timestart' => time(),
+            'timestart' => null,
             'timeduration' => 0,
             'timesort' => 0,
             'type'  => CALENDAR_EVENT_TYPE_STANDARD,
+            'uuid' => null,
         ];
 
         $event = (object) $event;
@@ -826,33 +882,68 @@ class test_data_generator {
                 $record->$property = $default;
             }
         }
+        $params = [];
+
+        if (!empty($record->timestart)) {
+            $time = \DateTime::createFromFormat('U', $record->timestart);
+        } else {
+            $time = new \DateTime('Sunday');
+            $time->sub(new \DateInterval('P3W'));
+        }
 
         if (isset($event->timestartmodifier)) {
-            $time = new \DateTime(usergetmidnight(time()));
             $time->add(new \DateInterval($event->timestartmodifier));
-            $record->timestart = $time->format('U');
         }
+        $record->timestart = $time->format('U');
 
         if (isset($event->category)) {
             $record->eventtype = 'category';
-            $record->categoryid = $event->category->id;
+            $params['categoryid'] = $record->categoryid = $event->category->id;
         }
 
         if (isset($event->course)) {
             $record->eventtype = 'course';
-            $record->courseid = $event->course->id;
+            $params['courseid'] = $record->courseid = $event->course->id;
         }
 
         if (isset($event->username)) {
             $record->eventtype = 'user';
             $user = $this->users[$username];
-            $record->userid = $user->id;
+            $params['userid'] = $record->userid = $user->id;
         }
 
         if (empty($record->userid)) {
             $record->userid = $this->adminuser->id;;
         }
 
-        \calendar_event::create($record, false);
+        if (!empty($record->repeats)) {
+            $record->repeat = 1;
+        }
+
+        if (empty($record->uuid)) {
+            $record->uuid = sha1($record->name);
+        }
+
+        $params['eventtype'] = $record->eventtype;
+        $params['uuid'] = $record->uuid;
+
+        $oldevents = $DB->get_records('event', $params);
+        $oldevent = null;
+        foreach ($oldevents as $e) {
+            $oldevent = $e;
+            if (!empty($e->repeatid) && $e->repeatid = $e->id) {
+                break;
+            }
+        }
+
+
+        if ($oldevent) {
+            $e = new \calendar_event($oldevent);
+            $e->update($record, false);
+            error_log("Event: {$record->name} updated");
+        } else {
+            \calendar_event::create($record, false);
+            error_log("Event: {$record->name} created");
+        }
     }
 }
