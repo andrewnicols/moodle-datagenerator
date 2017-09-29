@@ -14,6 +14,10 @@ Copy the `smartdata.php` file to the root of your Moodle checkout and run it fro
 
 This can be run multiple times to update the existing dataset.
 
+## Notes
+
+All users are created with the password `x`.
+
 ## TODO
 
 1. Add activities and their events to the generator
