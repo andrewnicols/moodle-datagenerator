@@ -867,7 +867,7 @@ class test_data_generator {
             'repeats' => 0,
             'timestart' => null,
             'timeduration' => 0,
-            'timesort' => 0,
+            'timesort' => null,
             'type'  => CALENDAR_EVENT_TYPE_STANDARD,
             'uuid' => null,
         ];
