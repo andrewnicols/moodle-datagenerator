@@ -358,8 +358,8 @@ $categories = [
         ],
     ],
     [
-        'name' => '2018-2019',
-        'idnumber' => $YEAR,
+        'name' => '2017-2018',
+        'idnumber' => $PYEAR,
         'enrolments' => [
             'manager' => [
                 'adam',
@@ -368,7 +368,7 @@ $categories = [
         'children' => [
             [
                 'name' => 'Faculty of Science and Technology',
-                'idnumber' => "$YEAR-fst",
+                'idnumber' => "$PYEAR-fst",
                 'enrolments' => [
                     'manager' => [
                         'bert',
@@ -587,6 +587,211 @@ $categories = [
                             ],
                         ],
                     ],
+                    [
+                        'name' => 'Mathematics and Statistics',
+                        'idnumber' => "{$PYEAR}-000025",
+                        'enrolments' => [
+                            'manager' => [
+                                'colin',
+                            ],
+                        ],
+                        'events' => [
+                        ],
+                        'children' => [
+                        ],
+                        'courses' => [
+// 1st year courses 17-18
+                            [
+                                'fullname' => 'Math101: Calculus',
+                                'idnumber' => "{$PYEAR}-001419",
+                                'startdate' => '09/10/2017',
+                                'enddate'   => '10/11/2017',
+                                'enrolments' => [
+                                    'editingteacher' => [
+                                        'todd',
+                                    ],
+                                    'student' => [
+                                        'james',
+                                        'john',
+                                        'melissa',
+                                    ],
+                                ],
+                            ],
+                            [
+                                'fullname' => 'Math102: Further Calculus',
+                                'idnumber' => "{$PYEAR}-001415",
+                                'startdate' => '06/11/2017',
+                                'enddate'   => '15/12/2017',
+                                'enrolments' => [
+                                    'editingteacher' => [
+                                        'todd',
+                                    ],
+                                    'student' => [
+                                        'james',
+                                        'john',
+                                        'melissa',
+                                    ],
+                                ],
+                            ],
+                            [
+                                'fullname' => 'Math103: Probability',
+                                'idnumber' => "{$PYEAR}-001418",
+                                'startdate' => '06/11/2017',
+                                'enddate'   => '16/02/2018',
+                                'enrolments' => [
+                                    'editingteacher' => [
+                                        'todd',
+                                    ],
+                                    'student' => [
+                                        'james',
+                                        'john',
+                                        'melissa',
+                                    ],
+                                ],
+                            ],
+                            [
+                                'fullname' => 'Math104: Statistics',
+                                'idnumber' => "{$PYEAR}-001417",
+                                'startdate' => '06/11/2017',
+                                'enddate'   => '23/03/2018',
+                                'enrolments' => [
+                                    'editingteacher' => [
+                                        'todd',
+                                    ],
+                                    'student' => [
+                                        'james',
+                                        'john',
+                                        'melissa',
+                                    ],
+                                ],
+                            ],
+                            [
+                                'fullname' => 'Math105: Linear Algebra',
+                                'idnumber' => "{$PYEAR}-001423",
+                                'startdate' => '06/11/2017',
+                                'enddate'   => '25/05/2018',
+                                'enrolments' => [
+                                    'editingteacher' => [
+                                        'todd',
+                                    ],
+                                    'student' => [
+                                        'james',
+                                        'john',
+                                        'melissa',
+                                    ],
+                                ],
+                            ],
+                            [
+                                'fullname' => 'Math111: Numbers and Relations',
+                                'idnumber' => "{$PYEAR}-001414",
+                                'startdate' => '09/10/2017',
+                                'enddate'   => '10/11/2017',
+                                'enrolments' => [
+                                    'editingteacher' => [
+                                        'todd',
+                                    ],
+                                    'student' => [
+                                        'james',
+                                        'john',
+                                        'melissa',
+                                    ],
+                                ],
+                            ],
+                            [
+                                'fullname' => 'Math112: Discrete Mathematics',
+                                'idnumber' => "{$PYEAR}-016327",
+                                'startdate' => '06/11/2017',
+                                'enddate'   => '15/12/2017',
+                                'enrolments' => [
+                                    'editingteacher' => [
+                                        'todd',
+                                    ],
+                                    'student' => [
+                                        'james',
+                                        'john',
+                                        'melissa',
+                                    ],
+                                ],
+                            ],
+                            [
+                                'fullname' => 'Math113: Convergence and Continuity',
+                                'idnumber' => "{$PYEAR}-019363",
+                                'startdate' => '06/11/2017',
+                                'enddate'   => '16/02/2018',
+                                'enrolments' => [
+                                    'editingteacher' => [
+                                        'todd',
+                                    ],
+                                    'student' => [
+                                        'james',
+                                        'john',
+                                        'melissa',
+                                    ],
+                                ],
+                            ],
+                            [
+                                'fullname' => 'Math114: Integration and Differentiation',
+                                'idnumber' => "{$PYEAR}-019364",
+                                'startdate' => '06/11/2017',
+                                'enddate'   => '24/03/2018',
+                                'enrolments' => [
+                                    'editingteacher' => [
+                                        'todd',
+                                    ],
+                                    'student' => [
+                                        'james',
+                                        'john',
+                                        'melissa',
+                                    ],
+                                ],
+                            ],
+                            [
+                                'fullname' => 'Math115: Geometry and Calculus',
+                                'idnumber' => "{$PYEAR}-005164",
+                                'startdate' => '06/11/2017',
+                                'enddate'   => '25/05/2018',
+                                'enrolments' => [
+                                    'editingteacher' => [
+                                        'todd',
+                                    ],
+                                    'student' => [
+                                        'james',
+                                        'john',
+                                        'melissa',
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+    ],
+    [
+        'name' => '2018-2019',
+        'idnumber' => $YEAR,
+        'enrolments' => [
+            'manager' => [
+                'adam',
+            ],
+        ],
+        'children' => [
+            [
+                'name' => 'Faculty of Science and Technology',
+                'idnumber' => "$YEAR-fst",
+                'enrolments' => [
+                    'manager' => [
+                        'bert',
+                    ],
+                ],
+                'events' => [
+                     [
+                         'name' => 'Faculty Induction',
+                         'description' => '<p>A chance to meet the faculty staff</p>',
+                         'timestartmodifier' => 'P1DT17H30M',
+                     ],
+                ],
+                'children' => [
                     [
                         'name' => 'Chemistry',
                         'idnumber' => "{$YEAR}-000141",
@@ -1091,167 +1296,6 @@ $categories = [
                             ],
 
 
-// 1st year courses 17-18
-                            [
-                                'fullname' => 'Math101: Calculus',
-                                'idnumber' => "{$PYEAR}-001419",
-                                'startdate' => '09/10/2017',
-                                'enddate'   => '10/11/2017',
-                                'enrolments' => [
-                                    'editingteacher' => [
-                                        'todd',
-                                    ],
-                                    'student' => [
-                                        'james',
-                                        'john',
-                                        'melissa',
-                                    ],
-                                ],
-                            ],
-                            [
-                                'fullname' => 'Math102: Further Calculus',
-                                'idnumber' => "{$PYEAR}-001415",
-                                'startdate' => '06/11/2017',
-                                'enddate'   => '15/12/2017',
-                                'enrolments' => [
-                                    'editingteacher' => [
-                                        'todd',
-                                    ],
-                                    'student' => [
-                                        'james',
-                                        'john',
-                                        'melissa',
-                                    ],
-                                ],
-                            ],
-                            [
-                                'fullname' => 'Math103: Probability',
-                                'idnumber' => "{$PYEAR}-001418",
-                                'startdate' => '06/11/2017',
-                                'enddate'   => '16/02/2018',
-                                'enrolments' => [
-                                    'editingteacher' => [
-                                        'todd',
-                                    ],
-                                    'student' => [
-                                        'james',
-                                        'john',
-                                        'melissa',
-                                    ],
-                                ],
-                            ],
-                            [
-                                'fullname' => 'Math104: Statistics',
-                                'idnumber' => "{$PYEAR}-001417",
-                                'startdate' => '06/11/2017',
-                                'enddate'   => '23/03/2018',
-                                'enrolments' => [
-                                    'editingteacher' => [
-                                        'todd',
-                                    ],
-                                    'student' => [
-                                        'james',
-                                        'john',
-                                        'melissa',
-                                    ],
-                                ],
-                            ],
-                            [
-                                'fullname' => 'Math105: Linear Algebra',
-                                'idnumber' => "{$PYEAR}-001423",
-                                'startdate' => '06/11/2017',
-                                'enddate'   => '25/05/2018',
-                                'enrolments' => [
-                                    'editingteacher' => [
-                                        'todd',
-                                    ],
-                                    'student' => [
-                                        'james',
-                                        'john',
-                                        'melissa',
-                                    ],
-                                ],
-                            ],
-                            [
-                                'fullname' => 'Math111: Numbers and Relations',
-                                'idnumber' => "{$PYEAR}-001414",
-                                'startdate' => '09/10/2017',
-                                'enddate'   => '10/11/2017',
-                                'enrolments' => [
-                                    'editingteacher' => [
-                                        'todd',
-                                    ],
-                                    'student' => [
-                                        'james',
-                                        'john',
-                                        'melissa',
-                                    ],
-                                ],
-                            ],
-                            [
-                                'fullname' => 'Math112: Discrete Mathematics',
-                                'idnumber' => "{$PYEAR}-016327",
-                                'startdate' => '06/11/2017',
-                                'enddate'   => '15/12/2017',
-                                'enrolments' => [
-                                    'editingteacher' => [
-                                        'todd',
-                                    ],
-                                    'student' => [
-                                        'james',
-                                        'john',
-                                        'melissa',
-                                    ],
-                                ],
-                            ],
-                            [
-                                'fullname' => 'Math113: Convergence and Continuity',
-                                'idnumber' => "{$PYEAR}-019363",
-                                'startdate' => '06/11/2017',
-                                'enddate'   => '16/02/2018',
-                                'enrolments' => [
-                                    'editingteacher' => [
-                                        'todd',
-                                    ],
-                                    'student' => [
-                                        'james',
-                                        'john',
-                                        'melissa',
-                                    ],
-                                ],
-                            ],
-                            [
-                                'fullname' => 'Math114: Integration and Differentiation',
-                                'idnumber' => "{$PYEAR}-019364",
-                                'startdate' => '06/11/2017',
-                                'enddate'   => '24/03/2018',
-                                'enrolments' => [
-                                    'editingteacher' => [
-                                        'todd',
-                                    ],
-                                    'student' => [
-                                        'james',
-                                        'john',
-                                        'melissa',
-                                    ],
-                                ],
-                            ],
-                            [
-                                'fullname' => 'Math115: Geometry and Calculus',
-                                'idnumber' => "{$PYEAR}-005164",
-                                'startdate' => '06/11/2017',
-                                'enddate'   => '25/05/2018',
-                                'enrolments' => [
-                                    'editingteacher' => [
-                                        'todd',
-                                    ],
-                                    'student' => [
-                                        'james',
-                                        'john',
-                                        'melissa',
-                                    ],
-                                ],
-                            ],
 // 2nd year courses 18-19
                             [
                                 'fullname' => 'Math210: Real Analysis',
