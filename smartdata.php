@@ -1834,8 +1834,8 @@ class test_data_generator {
         }
 
         if (empty($record->shortname)) {
-            $exp = explode(":", $record->fullname, 2);
-            $record->shortname = "<p>" . trim($exp[0]) . "</p>";
+            $name = explode(":", $record->fullname, 2);
+            $record->shortname = trim($name[0]);
         }
 
         $year = explode('-', $record->idnumber);
