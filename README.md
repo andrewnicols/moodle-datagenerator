@@ -46,6 +46,13 @@ All users are created with the password `x`.
 | xanthia| | POLI100, PHIL100, HIST100, Cinema |
 | yarloo| | POLI100, PHIL100, HIST100, Music Society|
 | zain| Students Union | |
+| james | | Chemistry + Maths |
+| rachel | | Chemistry + Physics |
+| jess | | Chemistry + Politics |
+| john | | Physics + Maths |
+| melissa | | Chemistry + Maths |
+| bennie | | Chemistry + Maths + Politics |
+| todd | | Maths |
 
 ## TODO
 
