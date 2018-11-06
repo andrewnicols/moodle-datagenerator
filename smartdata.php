@@ -13,6 +13,9 @@ require_once($CFG->dirroot . '/course/lib.php');
 require_once($CFG->libdir . '/testing/generator/data_generator.php');
 require_once($CFG->dirroot . '/calendar/tests/helpers.php');
 
+$PYEAR = '000117';
+$YEAR = '000118';
+
 $DOMAIN = "example.com.au";
 
 $users = [
@@ -77,6 +80,7 @@ $users = [
         'lastname' => 'Ostlethwaite',
     ],
     [
+        // Chemistry Undergraduate
         'firstname' => 'Penny',
         'lastname' => 'Pemberton',
     ],
@@ -93,10 +97,12 @@ $users = [
         'lastname' => 'Simpson',
     ],
     [
+        // Chemistry Undergraduate
         'firstname' => 'Trevor',
         'lastname' => 'Turnbull',
     ],
     [
+        // Chemistry Undergraduate
         'firstname' => 'Una',
         'lastname' => 'Umber',
     ],
@@ -119,6 +125,48 @@ $users = [
     [
         'firstname' => 'Zain',
         'lastname' => 'Zacks',
+    ],
+    [
+// 1st year Chemistry + Maths
+// 2nd year Chemistry + Maths
+        'firstname' => 'James',
+        'lastname'  => 'Boater',
+    ],
+    [
+// 1st year Chemistry + Physics
+// 2nd year Chemistry + Physics
+        'firstname' => 'Rachel',
+        'lastname'  => 'Inman',
+    ],
+    [
+// 1st year Chemistry + Politics
+// 2nd year Chemistry
+        'firstname' => 'Jess',
+        'lastname'  => 'Middleton',
+    ],
+    [
+// 1st year Physics + Maths
+// 2nd year Physics + Maths
+        'firstname' => 'John',
+        'lastname'  => 'Handby',
+    ],
+    [
+// 1st year Chemistry + Maths
+// 2nd year Chemistry + Maths
+        'firstname' => 'Melissa',
+        'lastname'  => 'Bragshaw',
+    ],
+    [
+// 1st year Maths + PPR
+// 2nd year Maths
+// 3rd year Maths
+        'firstname' => 'Bennie',
+        'lastname'  => 'Hill',
+    ],
+    [
+// Maths tutor.
+        'firstname' => 'Todd',
+        'lastname'  => 'Richunter',
     ],
 ];
 
@@ -310,8 +358,8 @@ $categories = [
         ],
     ],
     [
-        'name' => '2017-2018',
-        'idnumber' => '000118',
+        'name' => '2018-2019',
+        'idnumber' => $YEAR,
         'enrolments' => [
             'manager' => [
                 'adam',
@@ -320,7 +368,7 @@ $categories = [
         'children' => [
             [
                 'name' => 'Faculty of Science and Technology',
-                'idnumber' => '000118-fst',
+                'idnumber' => "$YEAR-fst",
                 'enrolments' => [
                     'manager' => [
                         'bert',
@@ -336,7 +384,212 @@ $categories = [
                 'children' => [
                     [
                         'name' => 'Chemistry',
-                        'idnumber' => '000118-000141',
+                        'idnumber' => "{$PYEAR}-000141",
+                        'enrolments' => [
+                            'manager' => [
+                                'colin',
+                            ],
+                        ],
+                        'events' => [
+                        ],
+                        'children' => [
+                        ],
+                        'courses' => [
+                            [
+                                'fullname' => 'CHEM101: Atoms and Molecules',
+                                'idnumber' => "{$PYEAR}-001667",
+                                'startdate' => '09/10/2017',
+                                'enddate'   => '10/11/2017',
+                                'enrolments' => [
+                                    'editingteacher' => [
+                                        'diane',
+                                    ],
+                                    'student' => [
+                                        'james',
+                                        'rachel',
+                                        'jess',
+                                        'melissa',
+                                    ],
+                                ],
+                                'events' => [
+                                ],
+                            ],
+                            [
+                                'fullname' => 'CHEM102: Organic Structure',
+                                'idnumber' => "{$PYEAR}-001663",
+                                'startdate' => '13/11/2017',
+                                'enddate'   => '15/12/2017',
+                                'enrolments' => [
+                                    'editingteacher' => [
+                                        'diane',
+                                    ],
+                                    'student' => [
+                                        'james',
+                                        'rachel',
+                                        'jess',
+                                        'melissa',
+                                    ],
+                                ],
+                                'events' => [
+                                ],
+                            ],
+                            [
+                                'fullname' => 'CHEM103: Chemistry of the Elements',
+                                'idnumber' => "{$PYEAR}-017427",
+                                'startdate' => '15/01/2018',
+                                'enddate' => '23/03/2018',
+                                'enrolments' => [
+                                    'editingteacher' => [
+                                        'diane',
+                                    ],
+                                    'student' => [
+                                        'james',
+                                        'rachel',
+                                        'jess',
+                                        'melissa',
+                                    ],
+                                ],
+                                'events' => [
+                                ],
+                            ],
+                            [
+                                'fullname' => 'CHEM104: Organic Reactivity and Mechanism',
+                                'idnumber' => "{$PYEAR}-001664",
+                                'startdate' => '19/02/2018',
+                                'enddate' => '01/06/2018',
+                                'enrolments' => [
+                                    'editingteacher' => [
+                                        'diane',
+                                    ],
+                                    'student' => [
+                                        'james',
+                                        'rachel',
+                                        'jess',
+                                        'melissa',
+                                    ],
+                                ],
+                                'events' => [
+                                ],
+                            ],
+                            [
+                                'fullname' => 'CHEM105: Coordination Chemistry',
+                                'idnumber' => "{$PYEAR}-017432",
+                                'startdate' => '23/04/2018',
+                                'enddate'   => '25/05/2018',
+                                'enrolments' => [
+                                    'editingteacher' => [
+                                        'diane',
+                                    ],
+                                    'student' => [
+                                        'james',
+                                        'rachel',
+                                        'jess',
+                                        'melissa',
+                                    ],
+                                ],
+                                'events' => [
+                                ],
+                            ],
+                            [
+                                'fullname' => 'CHEM111: Skills for Chemists',
+                                'idnumber' => "{$PYEAR}-017429",
+                                'startdate' => '09/10/2017',
+                                'enddate' => '19/01/2018',
+                                'enrolments' => [
+                                    'editingteacher' => [
+                                        'diane',
+                                    ],
+                                    'student' => [
+                                        'james',
+                                        'rachel',
+                                        'jess',
+                                        'melissa',
+                                    ],
+                                ],
+                                'events' => [
+                                ],
+                            ],
+                            [
+                                'fullname' => 'CHEM112: Spectroscopy and Analytical Chemistry',
+                                'idnumber' => "{$PYEAR}-017431",
+                                'startdate' => '09/10/2017',
+                                'enddate'   => '01/06/2018',
+                                'enrolments' => [
+                                    'editingteacher' => [
+                                        'diane',
+                                    ],
+                                    'student' => [
+                                        'james',
+                                        'rachel',
+                                        'jess',
+                                        'melissa',
+                                    ],
+                                ],
+                                'events' => [
+                                ],
+                            ],
+                            [
+                                'fullname' => 'CHEM113: Thermodynamics of Chemical Processes',
+                                'idnumber' => "{$PYEAR}-001666",
+                                'startdate' => '15/01/2018',
+                                'enddate'   => '16/02/2018',
+                                'enrolments' => [
+                                    'editingteacher' => [
+                                        'diane',
+                                    ],
+                                    'student' => [
+                                        'james',
+                                        'rachel',
+                                        'jess',
+                                        'melissa',
+                                    ],
+                                ],
+                                'events' => [
+                                ],
+                            ],
+                            [
+                                'fullname' => 'CHEM114: Chemical Reaction Kinetics',
+                                'idnumber' => "{$PYEAR}-019007",
+                                'startdate' => '19/02/2018',
+                                'enddate'   => '23/03/2018',
+                                'enrolments' => [
+                                    'editingteacher' => [
+                                        'diane',
+                                    ],
+                                    'student' => [
+                                        'james',
+                                        'rachel',
+                                        'jess',
+                                        'melissa',
+                                    ],
+                                ],
+                                'events' => [
+                                ],
+                            ],
+                            [
+                                'fullname' => 'CHEM115: Physical Foundations of Chemistry',
+                                'idnumber' => "{$PYEAR}-017430",
+                                'startdate' => '13/11/2017',
+                                'enddate'   => '25/05/2018',
+                                'enrolments' => [
+                                    'editingteacher' => [
+                                        'diane',
+                                    ],
+                                    'student' => [
+                                        'james',
+                                        'rachel',
+                                        'jess',
+                                        'melissa',
+                                    ],
+                                ],
+                                'events' => [
+                                ],
+                            ],
+                        ],
+                    ],
+                    [
+                        'name' => 'Chemistry',
+                        'idnumber' => "{$YEAR}-000141",
                         'enrolments' => [
                             'manager' => [
                                 'colin',
@@ -386,7 +639,9 @@ $categories = [
                             [
                                 'fullname' => 'CHEM101: Atoms and Molecules',
                                 'shortname' => 'CHEM101',
-                                'idnumber' => '000118-001667',
+                                'idnumber' => "{$YEAR}-001667",
+                                'startdate' => '08/10/2018',
+                                'enddate' => '09/11/2018',
                                 'description' => '<p>Atoms and Molecules</p>',
                                 'enrolments' => [
                                     'editingteacher' => [
@@ -400,13 +655,23 @@ $categories = [
                                     ],
                                 ],
                                 'events' => [
+                                    [
+                                        'name' => 'Workbook handout',
+                                        'description' => '<p>Weekly workbooks will be handed out</p>',
+                                        'timestartmodifier' => 'P1DT9H',
+                                    ],
+                                    [
+                                        'name' => 'Workbook collection',
+                                        'description' => '<p>Weekly workbooks will be collected</p>',
+                                        'timestartmodifier' => 'P10W1DT9H',
+                                    ],
                                 ],
                             ],
                             [
                                 'fullname' => 'CHEM102: Organic Structure',
-                                'shortname' => 'CHEM102',
-                                'idnumber' => '000118-001663',
-                                'description' => '<p>Organic Strucure</p>',
+                                'idnumber' => "{$YEAR}-001663",
+                                'startdate' => '12/11/2018',
+                                'enddate' => '14/12/2018',
                                 'enrolments' => [
                                     'editingteacher' => [
                                         'diane',
@@ -418,12 +683,772 @@ $categories = [
                                         'una',
                                     ],
                                 ],
+                                'events' => [
+                                    [
+                                        'name' => 'Organic roadshow',
+                                        'description' => '<p>Roadshow about organics</p>',
+                                        'timestartmodifier' => 'P1W1DT9H',
+                                    ],
+                                ],
+                            ],
+                            [
+                                'fullname' => 'CHEM103: Chemistry of the Elements',
+                                'idnumber' => "{$YEAR}-017427",
+                                'startdate' => '14/01/2019',
+                                'enddate' => '22/03/2019',
+                                'enrolments' => [
+                                    'editingteacher' => [
+                                        'diane',
+                                        'emily',
+                                    ],
+                                    'student' => [
+                                        'penny',
+                                        'trevor',
+                                        'una',
+                                    ],
+                                ],
+                                'events' => [
+                                ],
+                            ],
+                            [
+                                'fullname' => 'CHEM104: Organic Reactivity and Mechanism',
+                                'idnumber' => "{$YEAR}-001664",
+                                'startdate' => '18/02/2019',
+                                'enddate' => '31/05/2019',
+                                'enrolments' => [
+                                    'editingteacher' => [
+                                        'diane',
+                                        'emily',
+                                    ],
+                                    'student' => [
+                                        'penny',
+                                        'trevor',
+                                        'una',
+                                    ],
+                                ],
+                                'events' => [
+                                ],
+                            ],
+                            [
+                                'fullname' => 'CHEM105: Coordination Chemistry',
+                                'idnumber' => "{$YEAR}-017432",
+                                'startdate' => '25/03/2019',
+                                'enddate' => '24/05/2019',
+                                'enrolments' => [
+                                    'editingteacher' => [
+                                        'diane',
+                                        'emily',
+                                    ],
+                                    'student' => [
+                                        'penny',
+                                        'trevor',
+                                        'una',
+                                    ],
+                                ],
+                                'events' => [
+                                ],
+                            ],
+                            [
+                                'fullname' => 'CHEM111: Skills for Chemists',
+                                'idnumber' => "{$YEAR}-017429",
+                                'startdate' => '08/10/2018',
+                                'enddate' => '18/01/2019',
+                                'enrolments' => [
+                                    'editingteacher' => [
+                                        'diane',
+                                        'emily',
+                                    ],
+                                    'student' => [
+                                        'penny',
+                                        'trevor',
+                                        'una',
+                                    ],
+                                ],
+                                'events' => [
+                                ],
+                            ],
+                            [
+                                'fullname' => 'CHEM112: Spectroscopy and Analytical Chemistry',
+                                'idnumber' => "{$YEAR}-017431",
+                                'startdate' => '08/10/2018',
+                                'enddate'   => '31/05/2019',
+                                'enrolments' => [
+                                    'editingteacher' => [
+                                        'diane',
+                                        'emily',
+                                    ],
+                                    'student' => [
+                                        'penny',
+                                        'trevor',
+                                        'una',
+                                    ],
+                                ],
+                                'events' => [
+                                ],
+                            ],
+                            [
+                                'fullname' => 'CHEM113: Thermodynamics of Chemical Processes',
+                                'idnumber' => "{$YEAR}-001666",
+                                'startdate' => '14/01/2019',
+                                'enddate'   => '15/02/2019',
+                                'enrolments' => [
+                                    'editingteacher' => [
+                                        'diane',
+                                        'emily',
+                                    ],
+                                    'student' => [
+                                        'penny',
+                                        'trevor',
+                                        'una',
+                                    ],
+                                ],
+                                'events' => [
+                                ],
+                            ],
+                            [
+                                'fullname' => 'CHEM114: Chemical Reaction Kinetics',
+                                'idnumber' => "{$YEAR}-019007",
+                                'startdate' => '18/02/2019',
+                                'enddate'   => '22/03/2019',
+                                'enrolments' => [
+                                    'editingteacher' => [
+                                        'diane',
+                                        'emily',
+                                    ],
+                                    'student' => [
+                                        'penny',
+                                        'trevor',
+                                        'una',
+                                    ],
+                                ],
+                                'events' => [
+                                ],
+                            ],
+                            [
+                                'fullname' => 'CHEM115: Physical Foundations of Chemistry',
+                                'idnumber' => "{$YEAR}-017430",
+                                'startdate' => '12/11/2018',
+                                'enddate'   => '24/05/2019',
+                                'enrolments' => [
+                                    'editingteacher' => [
+                                        'diane',
+                                        'emily',
+                                    ],
+                                    'student' => [
+                                        'penny',
+                                        'trevor',
+                                        'una',
+                                    ],
+                                ],
+                                'events' => [
+                                ],
+                            ],
+
+// Second year Chemsitry courses
+                            [
+                                'fullname' => 'CHEM201: Alkene and Aromatic Chemistry',
+                                'shortname' => 'CHEM201',
+                                'idnumber' => "{$YEAR}-017877",
+                                'startdate' => '08/10/2018',
+                                'enddate'   => '24/05/2019',
+                                'description' => '<p>Alkene and Aromatic Chemistry</p>',
+                                'enrolments' => [
+                                    'editingteacher' => [
+                                        'diane',
+                                        'emily',
+                                    ],
+                                    'student' => [
+                                        'james',
+                                        'rachel',
+                                        'jess',
+                                        'melissa',
+                                    ],
+                                ],
+                                'events' => [
+                                ],
+                            ],
+                            [
+                                'fullname' => 'CHEM203: Strategies for Chemical Synthesis',
+                                'idnumber' => "{$YEAR}-017878",
+                                'startdate' => '14/01/2019',
+                                'enddate'   => '07/06/2019',
+                                'enrolments' => [
+                                    'editingteacher' => [
+                                        'diane',
+                                        'emily',
+                                    ],
+                                    'student' => [
+                                        'james',
+                                        'rachel',
+                                        'jess',
+                                        'melissa',
+                                    ],
+                                ],
+                                'events' => [
+                                ],
+                            ],
+                            [
+                                'fullname' => 'CHEM204: Molecular Structure Determination',
+                                'shortname' => 'CHEM204',
+                                'idnumber' => "{$YEAR}-017879",
+                                'startdate' => '12/11/2018',
+                                'enddate'   => '03/05/2019',
+                                'description' => '<p>Molecular Structure Determination</p>',
+                                'enrolments' => [
+                                    'editingteacher' => [
+                                        'diane',
+                                        'emily',
+                                    ],
+                                    'student' => [
+                                        'james',
+                                        'rachel',
+                                        'jess',
+                                        'melissa',
+                                    ],
+                                ],
+                                'events' => [
+                                ],
+                            ],
+                            [
+                                'fullname' => 'CHEM211: The Physical Principles of Spectroscopy',
+                                'shortname' => 'CHEM211',
+                                'idnumber' => "{$YEAR}-017880",
+                                'startdate' => '14/01/2019',
+                                'enddate'   => '22/03/2019',
+                                'description' => '<p>The Physical Principles of Spectroscopy</p>',
+                                'enrolments' => [
+                                    'editingteacher' => [
+                                        'diane',
+                                        'emily',
+                                    ],
+                                    'student' => [
+                                        'james',
+                                        'rachel',
+                                        'jess',
+                                        'melissa',
+                                     ],
+                                ],
+                                'events' => [
+                                ],
+                            ],
+
+                            [
+                                'fullname' => 'CHEM212: Thermodynamics and Statistical Mechanics',
+                                'shortname' => 'CHEM212',
+                                'idnumber' => "{$YEAR}-017974",
+                                'startdate' => '08/10/2018',
+                                'enddate'   => '03/05/2019',
+                                'description' => '<p>Thermodynamics and Statistical Mechanics</p>',
+                                'enrolments' => [
+                                    'editingteacher' => [
+                                        'diane',
+                                        'emily',
+                                    ],
+                                    'student' => [
+                                        'james',
+                                        'rachel',
+                                        'jess',
+                                        'melissa',
+                                     ],
+                                ],
+                                'events' => [
+                                ],
+                            ],
+                            [
+                                'fullname' => 'CHEM218: Electrochemistry',
+                                'idnumber' => "{$YEAR}-019375",
+                                'startdate' => '11/02/2019',
+                                'enddate'   => '03/05/2019',
+                                'enrolments' => [
+                                    'editingteacher' => [
+                                        'diane',
+                                        'emily',
+                                    ],
+                                    'student' => [
+                                        'james',
+                                        'rachel',
+                                        'jess',
+                                        'melissa',
+                                     ],
+                                ],
+                                'events' => [
+                                ],
+                            ],
+
+
+                            [
+                                'fullname' => 'CHEM222: Organometallics, Catalysis and Mechanism',
+                                'shortname' => 'CHEM222',
+                                'idnumber' => "{$YEAR}-017974",
+                                'startdate' => '12/11/2018',
+                                'enddate'   => '14/12/2018',
+                                'enrolments' => [
+                                    'editingteacher' => [
+                                        'diane',
+                                        'emily',
+                                    ],
+                                    'student' => [
+                                        'james',
+                                        'rachel',
+                                        'jess',
+                                        'melissa',
+                                     ],
+                                ],
+                                'events' => [
+                                ],
+                            ],
+                            [
+                                'fullname' => 'CHEM224: Inorganic Chemistry',
+                                'shortname' => 'CHEM224',
+                                'idnumber' => "{$YEAR}-017883",
+                                'startdate' => '18/02/2019',
+                                'enddate'   => '22/03/2019',
+                                'enrolments' => [
+                                    'editingteacher' => [
+                                        'diane',
+                                        'emily',
+                                    ],
+                                    'student' => [
+                                        'james',
+                                        'rachel',
+                                        'jess',
+                                        'melissa',
+                                     ],
+                                ],
+                                'events' => [
+                                ],
+                            ],
+                            [
+                                'fullname' => 'CHEM233: Solids, Soft Matter and Surface',
+                                'shortname' => 'CHEM233',
+                                'idnumber' => "{$YEAR}-017884",
+                                'startdate' => '14/01/2019',
+                                'enddate'   => '10/05/2019',
+                                'enrolments' => [
+                                    'editingteacher' => [
+                                        'diane',
+                                        'emily',
+                                    ],
+                                    'student' => [
+                                        'james',
+                                        'rachel',
+                                        'jess',
+                                        'melissa',
+                                     ],
+                                ],
+                                'events' => [
+                                ],
+                            ],
+                            [
+                                'fullname' => 'CHEM241: Quantum Chemistry, Symmetry and Group Theory',
+                                'shortname' => 'CHEM241',
+                                'idnumber' => "{$YEAR}-17883",
+                                'startdate' => '08/10/2018',
+                                'enddate'   => '14/12/2018',
+                                'enrolments' => [
+                                    'editingteacher' => [
+                                        'diane',
+                                        'emily',
+                                    ],
+                                    'student' => [
+                                        'james',
+                                        'rachel',
+                                        'jess',
+                                        'melissa',
+                                     ],
+                                ],
+                                'events' => [
+                                ],
+                            ],
+                        ],
+                    ],
+                    [
+                        'name' => 'Mathematics and Statistics',
+                        'idnumber' => "{$YEAR}-000025",
+                        'enrolments' => [
+                            'manager' => [
+                                'colin',
+                            ],
+                        ],
+                        'events' => [
+                        ],
+                        'children' => [
+                        ],
+                        'courses' => [
+                            [
+                                'fullname' => 'Math101: Calculus',
+                                'idnumber' => "{$YEAR}-001419",
+                                'startdate' => '08/10/2018',
+                                'enddate'   => '09/11/2018',
+                                'enrolments' => [
+                                    'editingteacher' => [
+                                        'todd',
+                                    ],
+                                    'student' => [
+                                        'penny',
+                                    ],
+                                ],
+                            ],
+
+
+// 1st year courses 17-18
+                            [
+                                'fullname' => 'Math101: Calculus',
+                                'idnumber' => "{$PYEAR}-001419",
+                                'startdate' => '09/10/2017',
+                                'enddate'   => '10/11/2017',
+                                'enrolments' => [
+                                    'editingteacher' => [
+                                        'todd',
+                                    ],
+                                    'student' => [
+                                        'james',
+                                        'john',
+                                        'melissa',
+                                    ],
+                                ],
+                            ],
+                            [
+                                'fullname' => 'Math102: Further Calculus',
+                                'idnumber' => "{$PYEAR}-001415",
+                                'startdate' => '06/11/2017',
+                                'enddate'   => '15/12/2017',
+                                'enrolments' => [
+                                    'editingteacher' => [
+                                        'todd',
+                                    ],
+                                    'student' => [
+                                        'james',
+                                        'john',
+                                        'melissa',
+                                    ],
+                                ],
+                            ],
+                            [
+                                'fullname' => 'Math103: Probability',
+                                'idnumber' => "{$PYEAR}-001418",
+                                'startdate' => '06/11/2017',
+                                'enddate'   => '16/02/2018',
+                                'enrolments' => [
+                                    'editingteacher' => [
+                                        'todd',
+                                    ],
+                                    'student' => [
+                                        'james',
+                                        'john',
+                                        'melissa',
+                                    ],
+                                ],
+                            ],
+                            [
+                                'fullname' => 'Math104: Statistics',
+                                'idnumber' => "{$PYEAR}-001417",
+                                'startdate' => '06/11/2017',
+                                'enddate'   => '23/03/2018',
+                                'enrolments' => [
+                                    'editingteacher' => [
+                                        'todd',
+                                    ],
+                                    'student' => [
+                                        'james',
+                                        'john',
+                                        'melissa',
+                                    ],
+                                ],
+                            ],
+                            [
+                                'fullname' => 'Math105: Linear Algebra',
+                                'idnumber' => "{$PYEAR}-001423",
+                                'startdate' => '06/11/2017',
+                                'enddate'   => '25/05/2018',
+                                'enrolments' => [
+                                    'editingteacher' => [
+                                        'todd',
+                                    ],
+                                    'student' => [
+                                        'james',
+                                        'john',
+                                        'melissa',
+                                    ],
+                                ],
+                            ],
+                            [
+                                'fullname' => 'Math111: Numbers and Relations',
+                                'idnumber' => "{$PYEAR}-001414",
+                                'startdate' => '09/10/2017',
+                                'enddate'   => '10/11/2017',
+                                'enrolments' => [
+                                    'editingteacher' => [
+                                        'todd',
+                                    ],
+                                    'student' => [
+                                        'james',
+                                        'john',
+                                        'melissa',
+                                    ],
+                                ],
+                            ],
+                            [
+                                'fullname' => 'Math112: Discrete Mathematics',
+                                'idnumber' => "{$PYEAR}-016327",
+                                'startdate' => '06/11/2017',
+                                'enddate'   => '15/12/2017',
+                                'enrolments' => [
+                                    'editingteacher' => [
+                                        'todd',
+                                    ],
+                                    'student' => [
+                                        'james',
+                                        'john',
+                                        'melissa',
+                                    ],
+                                ],
+                            ],
+                            [
+                                'fullname' => 'Math113: Convergence and Continuity',
+                                'idnumber' => "{$PYEAR}-019363",
+                                'startdate' => '06/11/2017',
+                                'enddate'   => '16/02/2018',
+                                'enrolments' => [
+                                    'editingteacher' => [
+                                        'todd',
+                                    ],
+                                    'student' => [
+                                        'james',
+                                        'john',
+                                        'melissa',
+                                    ],
+                                ],
+                            ],
+                            [
+                                'fullname' => 'Math114: Integration and Differentiation',
+                                'idnumber' => "{$PYEAR}-019364",
+                                'startdate' => '06/11/2017',
+                                'enddate'   => '24/03/2018',
+                                'enrolments' => [
+                                    'editingteacher' => [
+                                        'todd',
+                                    ],
+                                    'student' => [
+                                        'james',
+                                        'john',
+                                        'melissa',
+                                    ],
+                                ],
+                            ],
+                            [
+                                'fullname' => 'Math115: Geometry and Calculus',
+                                'idnumber' => "{$PYEAR}-005164",
+                                'startdate' => '06/11/2017',
+                                'enddate'   => '25/05/2018',
+                                'enrolments' => [
+                                    'editingteacher' => [
+                                        'todd',
+                                    ],
+                                    'student' => [
+                                        'james',
+                                        'john',
+                                        'melissa',
+                                    ],
+                                ],
+                            ],
+// 2nd year courses 18-19
+                            [
+                                'fullname' => 'Math210: Real Analysis',
+                                'shortname' => 'MATH210',
+                                'idnumber' => "{$YEAR}-001436",
+                                'startdate' => '08/10/2018',
+                                'enddate'   => '24/05/2019',
+                                'enrolments' => [
+                                    'editingteacher' => [
+                                        'todd',
+                                    ],
+                                    'student' => [
+                                        'james',
+                                        'john',
+                                        'melissa',
+                                    ],
+                                ],
+                            ],
+                            [
+                                'fullname' => 'Math215: Complex Analysis',
+                                'shortname' => 'MATH215',
+                                'idnumber' => "{$YEAR}-004869",
+                                'startdate' => '08/10/2018',
+                                'enddate'   => '03/05/2019',
+                                'enrolments' => [
+                                    'editingteacher' => [
+                                        'todd',
+                                    ],
+                                    'student' => [
+                                        'james',
+                                        'john',
+                                        'melissa',
+                                    ],
+                                ],
+                            ],
+                            [
+                                'fullname' => 'Math220: Linear Algebra II',
+                                'shortname' => 'MATH220',
+                                'idnumber' => "{$YEAR}-001441",
+                                'startdate' => '08/10/2018',
+                                'enddate'   => '03/05/2019',
+                                'enrolments' => [
+                                    'editingteacher' => [
+                                        'todd',
+                                    ],
+                                    'student' => [
+                                        'james',
+                                        'john',
+                                        'melissa',
+                                    ],
+                                ],
+                            ],
+                            [
+                                'fullname' => 'Math225: Abstract Algebra',
+                                'shortname' => 'MATH225',
+                                'idnumber' => "{$YEAR}-001443",
+                                'startdate' => '08/10/2018',
+                                'enddate'   => '03/05/2019',
+                                'enrolments' => [
+                                    'editingteacher' => [
+                                        'todd',
+                                    ],
+                                    'student' => [
+                                        'james',
+                                        'john',
+                                        'melissa',
+                                    ],
+                                ],
+                            ],
+                            [
+                                'fullname' => 'Math230: Probability II',
+                                'shortname' => 'MATH230',
+                                'idnumber' => "{$YEAR}-001447",
+                                'startdate' => '08/10/2018',
+                                'enddate'   => '03/05/2019',
+                                'enrolments' => [
+                                    'editingteacher' => [
+                                        'todd',
+                                    ],
+                                    'student' => [
+                                        'james',
+                                        'john',
+                                        'melissa',
+                                    ],
+                                ],
+                            ],
+                            [
+                                'fullname' => 'Math235: Statistics II',
+                                'shortname' => 'MATH235',
+                                'idnumber' => "{$YEAR}-001447",
+                                'startdate' => '08/10/2018',
+                                'enddate'   => '24/05/2019',
+                                'enrolments' => [
+                                    'editingteacher' => [
+                                        'todd',
+                                    ],
+                                    'student' => [
+                                        'james',
+                                        'john',
+                                        'melissa',
+                                    ],
+                                ],
+                            ],
+                            [
+                                'fullname' => 'Math240: Project Skills',
+                                'shortname' => 'MATH240',
+                                'idnumber' => "{$YEAR}-019779",
+                                'startdate' => '08/10/2018',
+                                'enddate'   => '15/05/2019',
+                                'enrolments' => [
+                                    'editingteacher' => [
+                                        'todd',
+                                    ],
+                                    'student' => [
+                                        'james',
+                                        'john',
+                                        'melissa',
+                                    ],
+                                ],
+                            ],
+                            [
+                                'fullname' => 'Math245: Computational Mathematics',
+                                'idnumber' => "{$YEAR}-019780",
+                                'startdate' => '08/10/2018',
+                                'enddate'   => '03/05/2019',
+                                'enrolments' => [
+                                    'editingteacher' => [
+                                        'todd',
+                                    ],
+                                    'student' => [
+                                        'james',
+                                        'john',
+                                        'melissa',
+                                    ],
+                                ],
+                            ],
+                            [
+                                'fullname' => 'Math271: Minor Course in Mathematics',
+                                'idnumber' => "{$YEAR}-015186",
+                                'startdate' => '08/10/2018',
+                                'enddate'   => '03/05/2019',
+                                'enrolments' => [
+                                    'editingteacher' => [
+                                        'todd',
+                                    ],
+                                    'student' => [
+
+                                    ],
+                                ],
+                            ],
+                            [
+                                'fullname' => 'Math272: Minor Course in Mathematics',
+                                'idnumber' => "{$YEAR}-015374",
+                                'startdate' => '14/01/2019',
+                                'enddate'   => '03/05/2019',
+                                'enrolments' => [
+                                    'editingteacher' => [
+                                        'todd',
+                                    ],
+                                    'student' => [
+
+                                    ],
+                                ],
+                            ],
+                            [
+                                'fullname' => 'Math313: Probability Theory',
+                                'idnumber' => "{$YEAR}-001459",
+                                'startdate' => '12/11/2018',
+                                'enddate'   => '29/03/2019',
+                                'enrolments' => [
+                                    'editingteacher' => [
+                                        'todd',
+                                    ],
+                                    'student' => [
+                                        'bennie',
+                                    ],
+                                ],
+                            ],
+                            [
+                                'fullname' => 'Math314: Lebesgue Integration',
+                                'idnumber' => "{$YEAR}-019780",
+                                'startdate' => '08/10/2018',
+                                'enddate'   => '24/05/2019',
+                                'enrolments' => [
+                                    'editingteacher' => [
+                                        'todd',
+                                    ],
+                                    'student' => [
+                                        'bennie',
+                                    ],
+                                ],
                             ],
                         ],
                     ],
                     [
                         'name' => 'Phsyics',
-                        'idnumber' => '000118-000035',
+                        'idnumber' => "{$YEAR}-000035",
                         'enrolments' => [
                             'manager' => [
                                 'fred',
@@ -435,7 +1460,7 @@ $categories = [
                             [
                                 'fullname' => 'PHYS101: The Physical Universe',
                                 'shortname' => 'PHYS101',
-                                'idnumber' => '000118-001701',
+                                'idnumber' => "{$YEAR}-001701",
                                 'description' => '<p>The Physical Univerise</p>',
                                 'enrolments' => [
                                     'editingteacher' => [
@@ -448,11 +1473,18 @@ $categories = [
                                         'victor',
                                     ],
                                 ],
+                                'events' => [
+                                    [
+                                        'name' => 'Science week volunteering',
+                                        'description' => '<p>We will have guests from local schools in to the observatory.</p>',
+                                        'timestartmodifier' => 'P1W1DT21H',
+                                    ]
+                                ],
                             ],
                             [
                                 'fullname' => 'PHYS102: Classical Mechanics',
                                 'shortname' => 'PHYS102',
-                                'idnumber' => '000118-001702',
+                                'idnumber' => "{$YEAR}-001702",
                                 'description' => '<p>Classical Mechanics</p>',
                                 'enrolments' => [
                                     'editingteacher' => [
@@ -471,7 +1503,7 @@ $categories = [
             ],
             [
                 'name' => 'Faculty of Arts and Social Sciences',
-                'idnumber' => '000118-fass',
+                'idnumber' => "{$YEAR}-fass",
                 'enrolments' => [
                     'manager' => [
                         'indianna',
@@ -480,7 +1512,7 @@ $categories = [
                 'children' => [
                     [
                         'name' => 'History',
-                        'idnumber' => '000118-000021',
+                        'idnumber' => "{$YEAR}-000021",
                         'enrolments' => [
                             'manager' => [
                                 'james',
@@ -492,7 +1524,7 @@ $categories = [
                             [
                                 'fullname' => 'HIST100: From Ancient to Modern: History and Historians',
                                 'shortname' => 'HIST100',
-                                'idnumber' => '000118-015173',
+                                'idnumber' => "{$YEAR}-015173",
                                 'description' => '<p>From Ancient to Modern: History and Historians</p>',
                                 'enrolments' => [
                                     'editingteacher' => [
@@ -510,7 +1542,7 @@ $categories = [
                             [
                                 'fullname' => 'HIST101: The Fall of Rome',
                                 'shortname' => 'HIST101',
-                                'idnumber' => '000118-018723',
+                                'idnumber' => "{$YEAR}-018723",
                                 'description' => '<p>The Fall of Rome</p>',
                                 'enrolments' => [
                                     'editingteacher' => [
@@ -527,7 +1559,7 @@ $categories = [
                     ],
                     [
                         'name' => 'Politics, Philosophy and Religion',
-                        'idnumber' => '000118-000243',
+                        'idnumber' => "{$YEAR}-000243",
                         'enrolments' => [
                             'manager' => [
                                 'mary',
@@ -546,7 +1578,7 @@ $categories = [
                             [
                                 'fullname' => 'POLI100: Politics and International Relations in the Contemporary World',
                                 'shortname' => 'POLI100',
-                                'idnumber' => '000118-008549',
+                                'idnumber' => "{$YEAR}-008549",
                                 'description' => '<p>Politics and International Relations in the Contemporary World</p>',
                                 'events' => [
                                     [
@@ -579,7 +1611,7 @@ $categories = [
                             [
                                 'fullname' => 'PHIL100: Introduction to Philosophy',
                                 'shortname' => 'PHIL100',
-                                'idnumber' => '000118-002163',
+                                'idnumber' => "{$YEAR}-002163",
                                 'description' => '<p>Introduction to Philosophy</p>',
                                 'enrolments' => [
                                     'editingteacher' => [
@@ -665,6 +1697,7 @@ class test_data_generator {
     }
 
     protected function create_category($category, $parent = null) {
+        global $DB;
         // Process the current category.
         $record = (object) $category;
 
@@ -737,6 +1770,33 @@ class test_data_generator {
 
         $record->category = $category->id;
 
+        if (!empty($record->startdate)) {
+            $value = DateTime::createFromFormat('d/m/Y', $record->startdate);
+            $record->startdate = $value->format('U');
+
+            if (!empty($record->enddate)) {
+                $value = DateTime::createFromFormat('d/m/Y', $record->enddate);
+                $record->enddate = $value->format('U');
+            }
+        }
+
+        if (empty($record->startdate)) {
+            unset($record->enddate);
+        }
+
+        if (empty($record->description)) {
+            $exp = explode(":", $record->fullname, 2);
+            $record->description = "<p>" . trim($exp[1]) . "</p>";
+        }
+
+        if (empty($record->shortname)) {
+            $exp = explode(":", $record->fullname, 2);
+            $record->shortname = "<p>" . trim($exp[0]) . "</p>";
+        }
+
+        $year = explode('-', $record->idnumber);
+        $record->shortname = "{$year[0]}-{$record->shortname}";
+
         if (!empty($this->courses[$record->idnumber])) {
             $thiscourse = $this->courses[$record->idnumber];
             error_log("==> Found existing course {$record->shortname}");
@@ -754,6 +1814,7 @@ class test_data_generator {
 
             // TODO Update the parentage.
         } else {
+            error_log("==> Creating course '{$record->shortname}' in '{$category->name}'");
             $generator = new testing_data_generator();
             $thiscourse = $generator->create_course($record);
             $this->courses[$thiscourse->idnumber] = $thiscourse;
@@ -773,6 +1834,9 @@ class test_data_generator {
         if (isset($course['events'])) {
             foreach ($course['events'] as $event) {
                 $event['course'] = $thiscourse;
+                if (!empty($record->startdate) && empty($event['timestart']) && !empty($event['timestartmodifier'])) {
+                    $event['timestart'] = $record->startdate;
+                }
                 $this->create_event($event);
             }
         }
