@@ -13,6 +13,35 @@ require_once($CFG->dirroot . '/course/lib.php');
 require_once($CFG->libdir . '/testing/generator/data_generator.php');
 require_once($CFG->dirroot . '/calendar/tests/helpers.php');
 
+// Get cli options.
+list($options, $unrecognized) = cli_get_params(array('help' => false,
+                                                     'admin' => false),
+                                               array('h' => 'help',
+                                                     'a' => 'admin'));
+if ($unrecognized) {
+    $unrecognized = implode("\n  ", $unrecognized);
+    cli_error(get_string('cliunknowoption', 'admin', $unrecognized));
+}
+
+// CLI help.
+if ($options['help']) {
+    $help = "This is a data generator which attempts to set up pseudo-realistic data.
+
+When run, it does create users, courses and enrolments.
+For seeing an overview of the created assets, see
+https://github.com/andrewnicols/moodle-datagenerator#notes
+
+Options:
+-a, --admin     Enrol the admin account into some courses, too
+-h, --help      Print out this help
+
+Example:
+\$ sudo -u www-data /usr/bin/php smartdata.php ";
+    cli_writeln($help);
+    exit(0);
+}
+
+
 $PYEAR = '000117';
 $YEAR = '000118';
 
@@ -1680,6 +1709,15 @@ $categories = [
     ],
 ];
 
+
+// If requested, add admin enrolments to the courses.
+if ($options['admin']) {
+   $categories[0]['courses'][0]['enrolments']['editingteacher'][] = 'admin';
+   $categories[0]['courses'][1]['enrolments']['student'][] = 'admin';
+   $categories[0]['courses'][2]['enrolments']['editingteacher'][] = 'admin';
+}
+
+
 $transaction = $DB->start_delegated_transaction();
 
 $generator = new test_data_generator();
@@ -1942,8 +1980,13 @@ class test_data_generator {
         $generator = new testing_data_generator();
 
         $roleid = $this->roles[$rolename]->id;
-        $user = $this->users[$username];
-        $userid = $user->id;
+        if ($username == 'admin') {
+            $user = $this->adminuser;
+            $userid = $this->adminuser->id;
+        } else {
+            $user = $this->users[$username];
+            $userid = $user->id;
+        }
         $context = \context_coursecat::instance($category->id);
         $contextid = $context->id;
 
@@ -1955,8 +1998,13 @@ class test_data_generator {
         $generator = new testing_data_generator();
 
         $roleid = $this->roles[$rolename]->id;
-        $user = $this->users[$username];
-        $userid = $user->id;
+        if ($username == 'admin') {
+            $user = $this->adminuser;
+            $userid = $this->adminuser->id;
+        } else {
+            $user = $this->users[$username];
+            $userid = $user->id;
+        }
 
         $generator->enrol_user($userid, $course->id, $roleid);
         error_log("==> Enrolled user '{$user->username}' as a '{$rolename}' ({$roleid}) in '{$course->shortname}'");
